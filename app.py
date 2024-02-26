@@ -1,5 +1,9 @@
-import pickle as p 
+import pickle 
 import streamlit as st 
+
+
+movies = pickle.load(open('artifacts\pickle\movies.pkl' , 'rb'))
+similarity = pickle.load(open('artifacts\pickle\similarity.pkl' , 'rb'))
 
 def recommend(selected_movie) :
     recommendation_list = []
@@ -13,8 +17,6 @@ def recommend(selected_movie) :
         
     return recommendation_list 
 
-movies = p.load(open('artifacts\pickle\movies.pkl' , 'rb'))
-similarity = p.load(open('artifacts\pickle\similarity.pkl' , 'rb'))
 
 
 st.header('Movie Recommendation System')
