@@ -6,7 +6,7 @@ def recommend(selected_movie) :
     movie_index = movies[movies['Title'] == selected_movie].index[0] 
     distance = similarity[movie_index]
     
-    recommended = sorted(list(enumerate(distance)) , reverse = True , key = lambda x : x[0])[1:6]
+    recommended = sorted(list(enumerate(distance)) , reverse = True , key = lambda x : x[0])[1:11]
     
     for mov in recommended : 
         recommendation_list.append(movies.iloc[mov[0]].Title)
