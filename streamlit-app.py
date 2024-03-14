@@ -1,9 +1,12 @@
+
 import streamlit as st 
 import pandas as pd 
 import pickle 
 
-movies = pickle.load(open('artifacts/pickle/movies.pkl' , 'rb'))
-similarity = pickle.load(open('artifacts/pickle/similarity.pkl' ,'rb'))
+movies = pickle.load(open('app/utils/artifacts/pickle/movies.pkl' , 'rb'))
+similarity = pickle.load(open('app/utils/artifacts/pickle/similarity.pkl' ,'rb'))
+
+df_ratings = pd.read_csv(open('app/utils/artifacts/cleaned_dfs/ratings_cleaned_df.csv'))
 
 def recommend(movie_title) : 
     recommendations = []
@@ -29,3 +32,8 @@ if st.button("Recommeded") :
     st.write(recommended_movies)
 
     
+    
+
+    
+    
+
